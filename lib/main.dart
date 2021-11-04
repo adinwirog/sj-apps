@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarangjembar_apps/screens/detail_barang.dart';
 import 'package:sarangjembar_apps/screens/main_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class CoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: DetailBarangScreen(),
     );
   }
 }
