@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarangjembar_apps/screens/tabbar/penjualan/penjualan_tab.dart';
 import 'package:sarangjembar_apps/screens/tabbar/stokbarang/stokbarang_tab.dart';
 
 class MainScreen extends StatefulWidget {
@@ -13,9 +14,7 @@ class _MainScreenState extends State<MainScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     StokBarangTab(),
-    Text(
-      'Index 1: Business',
-    ),
+    PenjualanTab(),
     Text(
       'Index 2: School',
     ),
@@ -23,29 +22,27 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _widgetOptions.elementAt(_currentindex),
+    return Scaffold(
+      body: _widgetOptions.elementAt(_currentindex),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_shipping),
-            label: 'STOK BARANG',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'PENJUALAN'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.money),
-              label: 'BON/HUTANG')
-        ],
-        currentIndex: _currentindex,
-        unselectedIconTheme: IconThemeData(color: Color(0xff000000)),
-        selectedItemColor: Color(0xffA9C500),
-        onTap: (int index) {
-          setState(() {
-            _currentindex = index;
-          });
-        }
-      ),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_shipping),
+              label: 'STOK BARANG',
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart), label: 'PENJUALAN'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.money), label: 'BON/HUTANG')
+          ],
+          currentIndex: _currentindex,
+          unselectedIconTheme: IconThemeData(color: Color(0xff000000)),
+          selectedItemColor: Color(0xffA9C500),
+          onTap: (int index) {
+            setState(() {
+              _currentindex = index;
+            });
+          }),
     );
   }
 }

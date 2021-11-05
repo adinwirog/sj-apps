@@ -13,7 +13,7 @@ class CoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DetailBarangScreen(),
+      home: MainScreen(),
     );
   }
 }

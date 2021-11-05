@@ -25,7 +25,6 @@ class _StokBarangTabState extends State<StokBarangTab> {
               Tab(child: Text("Tambah Data")),
             ],
           ),
-//             title: const Text('Tabs Demo'),
         ),
         body: const TabBarView(
           children: [
