@@ -11,7 +11,7 @@ class _TransaksiViewState extends State<TransaksiView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFCEDEA),
+      backgroundColor: Color(0xffE9E9E9),
       body: Padding(
         padding: EdgeInsets.only(top: 20.0),
         child: Column(
@@ -112,13 +112,19 @@ class _TransaksiViewState extends State<TransaksiView> {
                 )
               ],
             )),
-            ElevatedButton(onPressed: () {}, child: Text("Bayar")),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text("Bayar"),
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xff7165FF),
+              ),
+            ),
             Container(
               // width: 387,
               // height: 75,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
-                color: Color(0xff22a1fd),
+                color: Color(0xff7165FF),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),

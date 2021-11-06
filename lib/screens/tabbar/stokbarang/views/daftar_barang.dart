@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sarangjembar_apps/models/unit_barang.dart';
 import 'package:sarangjembar_apps/screens/detail_barang.dart';
+import 'package:sarangjembar_apps/screens/tambah_barang.dart';
 
 class DaftarBarangView extends StatefulWidget {
   const DaftarBarangView({Key? key}) : super(key: key);
@@ -98,7 +99,13 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context) {
+              return TambahDataScreen();
+            },
+          ));
+        },
         backgroundColor: Color(0xff7165FF),
         child: Icon(Icons.add),
       ),

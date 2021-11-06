@@ -11,7 +11,7 @@ class _RiwayatViewState extends State<RiwayatView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFCEDEA),
+      backgroundColor: Color(0xffE9E9E9),
       body: Padding(
         padding: EdgeInsets.only(top: 20.0),
         child: Column(

@@ -13,7 +13,7 @@ class _LaporanViewState extends State<LaporanView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFCEDEA),
+      backgroundColor: Color(0xffE9E9E9),
       body: ListView(
         children: [
           Padding(
