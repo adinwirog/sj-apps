@@ -11,7 +11,7 @@ class _TambahDataScreenState extends State<TambahDataScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFCEDEA),
+      backgroundColor: Color(0xffE9E9E9),
       appBar: AppBar(
         title: Text("Tambah Barang"),
         backgroundColor: Color(0xff7165FF),
@@ -136,7 +136,7 @@ class _TambahDataScreenState extends State<TambahDataScreen> {
                       fontWeight: FontWeight.bold),
                 ),
                 style: ElevatedButton.styleFrom(
-                    fixedSize: Size(123, 26), primary: Color(0xff00AE11)),
+                    fixedSize: Size(123, 26), primary: Color(0xff7165FF)),
               ),
             ),
           ],
