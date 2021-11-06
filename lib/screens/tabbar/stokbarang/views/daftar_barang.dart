@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarangjembar_apps/screens/detail_barang.dart';
 
 class DaftarBarangView extends StatefulWidget {
   const DaftarBarangView({Key? key}) : super(key: key);
@@ -42,6 +43,13 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
                 itemCount: 20,
                 itemBuilder: (context, index) => Card(
                   child: ListTile(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return DetailBarangScreen();
+                        },
+                      ));
+                    },
                     title: Text(
                       "Barang $index",
                       style: TextStyle(fontSize: 20),
