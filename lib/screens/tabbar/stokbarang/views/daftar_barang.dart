@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sarangjembar_apps/models/unit_barang.dart';
 import 'package:sarangjembar_apps/screens/detail_barang.dart';
 
 class DaftarBarangView extends StatefulWidget {
@@ -9,10 +10,28 @@ class DaftarBarangView extends StatefulWidget {
 }
 
 class _DaftarBarangViewState extends State<DaftarBarangView> {
+  List<Barang> _barang = [
+    Barang(nama: "Mizone", hargaPerUnit: 1000, jumlahUnit: 20),
+    Barang(nama: "Yuzu", hargaPerUnit: 1000, jumlahUnit: 20),
+    Barang(nama: "Milkuat", hargaPerUnit: 1000, jumlahUnit: 10),
+    Barang(nama: "Milkuat Bantal", hargaPerUnit: 2000, jumlahUnit: 20),
+    Barang(nama: "Ozone", hargaPerUnit: 1000, jumlahUnit: 20),
+  ];
+
+  List<Barang> _barangToDisplay = [];
+
+  @override
+  void initState() {
+    setState(() {
+      _barangToDisplay = _barang;
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFCEDEA),
+      backgroundColor: Color(0xffE9E9E9),
       body: Padding(
         padding: EdgeInsets.only(top: 20.0),
         child: Column(
@@ -36,11 +55,20 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
                 ),
               ),
               keyboardType: TextInputType.text,
+              onChanged: (text) {
+                text = text.toLowerCase();
+                setState(() {
+                  _barangToDisplay = _barang.where((barang) {
+                    var namaBarang = barang.nama.toLowerCase();
+                    return namaBarang.contains(text);
+                  }).toList();
+                });
+              },
             ),
             SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                itemCount: 20,
+                itemCount: _barangToDisplay.length,
                 itemBuilder: (context, index) => Card(
                   child: ListTile(
                     onTap: () {
@@ -51,15 +79,15 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
                       ));
                     },
                     title: Text(
-                      "Barang $index",
+                      "${_barangToDisplay[index].nama}",
                       style: TextStyle(fontSize: 20),
                     ),
                     subtitle: Text(
-                      "Rp. ${index * 2000}/unit",
+                      "Rp. ${_barangToDisplay[index].hargaPerUnit}/unit",
                       style: TextStyle(fontSize: 16),
                     ),
                     trailing: Text(
-                      "${index * 5} Unit",
+                      "${_barangToDisplay[index].jumlahUnit} Unit",
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
@@ -69,6 +97,12 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color(0xff7165FF),
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

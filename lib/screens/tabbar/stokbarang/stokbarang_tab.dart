@@ -13,7 +13,7 @@ class _StokBarangTabState extends State<StokBarangTab> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 1,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xff7165FF),
@@ -22,14 +22,14 @@ class _StokBarangTabState extends State<StokBarangTab> {
             indicatorColor: Colors.white,
             tabs: [
               Tab(child: Text("Daftar Barang")),
-              Tab(child: Text("Tambah Data")),
+              // Tab(child: Text("Tambah Data")),
             ],
           ),
         ),
         body: const TabBarView(
           children: [
             DaftarBarangView(),
-            TambahDataView(),
+            // TambahDataView(),
           ],
         ),
       ),
