@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sarangjembar_apps/screens/tabbar/penjualan/penjualan_tab.dart';
 import 'package:sarangjembar_apps/screens/tabbar/stokbarang/stokbarang_tab.dart';
 
+import 'tabbar/hutang/hutang_tab.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -15,9 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
     StokBarangTab(),
     PenjualanTab(),
-    Text(
-      'Index 2: School',
-    ),
+    HutangTab(),
   ];
 
   @override
