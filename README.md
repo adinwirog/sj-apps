@@ -5,9 +5,11 @@ Aplikasi Pencatatan Dan Pembukuan Laporan Untuk Toko Sarang Jembar.
 Aplikasi Mobile ini dibuat untuk pemenuhan Tugas Akhir Matakuliah Pemrograman Mobile.
 
 Kelompok C3
+
 Anggota :
-    - Muhammad Muhtadin Nurilhaq (192410102031)
-    - Muhammad Iqbal Riyadi (192410102052)
+
+    - Muhammad Muhtadin Nurilhaq (192410102031) - @adinwirog
+    - Muhammad Iqbal Riyadi (192410102052) - @iqbalriyad
 
 ## Getting Started
 
