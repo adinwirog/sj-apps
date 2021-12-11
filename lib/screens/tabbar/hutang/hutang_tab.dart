@@ -12,7 +12,7 @@ class _HutangTabState extends State<HutangTab> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 1,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xff7165FF),
@@ -20,14 +20,14 @@ class _HutangTabState extends State<HutangTab> {
             indicatorSize: TabBarIndicatorSize.label,
             indicatorColor: Colors.white,
             tabs: [
-              Tab(child: Text("Daftar")),
-              Tab(child: Text("Pelunasan")),
+              Tab(child: Text("Daftar Hutang")),
+              // Tab(child: Text("Pelunasan")),
             ],
           ),
         ),
         body: TabBarView(children: [
           DaftarViewState(),
-          DaftarViewState(),
+          // DaftarViewState(),
         ]),
       ),
     );

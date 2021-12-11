@@ -34,6 +34,7 @@ class _DetailBarangScreenState extends State<DetailBarangScreen> {
   @override
   Widget build(BuildContext context) {
     var prov = Provider.of<ProviderEditBarang>(context, listen: false);
+    prov.initial(widget.barang.jumlahUnit);
     return Scaffold(
       backgroundColor: Color(0xffE9E9E9),
       appBar: AppBar(

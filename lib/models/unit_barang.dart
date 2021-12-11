@@ -2,7 +2,7 @@ class Barang {
   int? id;
   String? nama;
   int? hargaPerUnit;
-  int? jumlahUnit;
+  late int jumlahUnit;
 
   Barang(this.id, this.nama, this.hargaPerUnit, this.jumlahUnit);
 

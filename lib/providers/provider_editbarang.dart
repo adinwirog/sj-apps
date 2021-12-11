@@ -15,13 +15,18 @@ class ProviderEditBarang extends ChangeNotifier {
   }
 
   void subtrValUnit() {
-    if(_valUnit <= 1) {
+    if (_valUnit <= 1) {
       _valUnit = 1;
     } else {
       _valUnit--;
     }
     notifyListeners();
-    }
+  }
+
+  void initial(int val) {
+    _valUnit = val;
+    notifyListeners();
+  }
 
   void resetValunit() {
     _valUnit = 1;
@@ -32,4 +37,4 @@ class ProviderEditBarang extends ChangeNotifier {
     await DbHelper.instance.updateBarang(barang);
     notifyListeners();
   }
-  }
+}

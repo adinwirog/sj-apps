@@ -39,4 +39,14 @@ class ProviderBarang extends ChangeNotifier {
   List<Barang> get barangdisplay {
     return _barangToDisplay;
   }
+
+  Future deleteBarang(int idbarang) async {
+    await DbHelper.instance.deleteBarang(idbarang);
+    notifyListeners();
+  }
+
+  Future deleteTransak(int idbarang) async {
+    await DbHelper.instance.deleteTransakBarang(idbarang);
+    notifyListeners();
+  }
 }
