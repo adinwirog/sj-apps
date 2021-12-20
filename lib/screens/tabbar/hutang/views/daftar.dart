@@ -11,6 +11,25 @@ class DaftarViewState extends StatefulWidget {
 }
 
 class _DaftarViewStateState extends State<DaftarViewState> {
+  late final _search;
+
+  @override
+  void initState() {
+    // setState(() {
+    //   // _barangToDisplay = _barang;
+    // });
+    _search = TextEditingController();
+    // _currfoc = FocusScope();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _search.dispose();
+    // _currfoc.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +43,7 @@ class _DaftarViewStateState extends State<DaftarViewState> {
               child: Column(
                 children: [
                   TextField(
+                    controller: _search,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -37,7 +57,11 @@ class _DaftarViewStateState extends State<DaftarViewState> {
                       ),
                       hintText: "Cari Nama/Alamat ...",
                       suffixIcon: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            _search.clear();
+                          });
+                        },
                         icon: Icon(Icons.clear),
                       ),
                     ),

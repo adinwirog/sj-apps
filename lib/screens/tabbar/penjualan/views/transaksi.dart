@@ -307,7 +307,7 @@ class _TransaksiViewState extends State<TransaksiView> {
                       }
                     });
                   }
-                } else {
+                } else if (prov.listbarang.isNotEmpty) {
                   showDialog(
                     barrierDismissible: false,
                     context: context,
@@ -360,6 +360,7 @@ class _TransaksiViewState extends State<TransaksiView> {
                             actions: [
                               TextButton(
                                 onPressed: () {
+                                  prov.setTotal();
                                   Navigator.of(context).pop();
                                 },
                                 child: Text("Ok"),

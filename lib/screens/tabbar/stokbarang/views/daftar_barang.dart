@@ -78,7 +78,11 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
                           ),
                           hintText: "Cari Barang...",
                           suffixIcon: IconButton(
-                            onPressed: _search.clear,
+                            onPressed: () {
+                              setState(() {
+                                _search.clear();
+                              });
+                            },
                             icon: Icon(Icons.clear),
                           ),
                         ),
@@ -122,7 +126,8 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
                                       data.barangdisplay[index].hargaPerUnit
                                           .toString() +
                                       "/unit",
-                                  style: TextStyle(fontSize: 16, color: Color(0xff00930F)),
+                                  style: TextStyle(
+                                      fontSize: 16, color: Color(0xff00930F)),
                                 ),
                                 trailing: Wrap(
                                   runSpacing: 20.0,
@@ -133,7 +138,13 @@ class _DaftarBarangViewState extends State<DaftarBarangView> {
                                       data.barangdisplay[index].jumlahUnit
                                               .toString() +
                                           " Unit",
-                                      style: TextStyle(fontSize: 20, color: (data.barangdisplay[index].jumlahUnit < 1) ? Color(0xffEE0000) : Color(0xff001893)),
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: (data.barangdisplay[index]
+                                                      .jumlahUnit <
+                                                  1)
+                                              ? Color(0xffEE0000)
+                                              : Color(0xff001893)),
                                     ),
                                     IconButton(
                                         onPressed: () {

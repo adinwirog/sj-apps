@@ -10,6 +10,25 @@ class PilihUnitBarangScreen extends StatefulWidget {
 }
 
 class _PilihUnitBarangScreenState extends State<PilihUnitBarangScreen> {
+  late final _search;
+
+  @override
+  void initState() {
+    // setState(() {
+    //   // _barangToDisplay = _barang;
+    // });
+    _search = TextEditingController();
+    // _currfoc = FocusScope();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _search.dispose();
+    // _currfoc.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +48,7 @@ class _PilihUnitBarangScreenState extends State<PilihUnitBarangScreen> {
                 child: Column(
                   children: [
                     TextField(
+                      controller: _search,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -42,7 +62,11 @@ class _PilihUnitBarangScreenState extends State<PilihUnitBarangScreen> {
                         ),
                         hintText: "Cari Barang...",
                         suffixIcon: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              _search.clear();
+                            });
+                          },
                           icon: Icon(Icons.clear),
                         ),
                       ),
